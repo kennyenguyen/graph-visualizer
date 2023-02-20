@@ -1,1 +1,8 @@
-<p>node works!</p>
+<div class="node" [ngClass]="{'isVisited': node.isVisited, 'isWall': node.isWall, 'isStartNode': node.isStartNode, 'isEndNode': node.isEndNode, 'inPath': node.inPath}" 
+    #nodeElement (mouseover)="createWall($event)" (mousedown)="mouseDown($event)" (mouseup)="mouseUp($event)"
+    draggable="{{ (node.isStartNode || node.isEndNode) ? true : false }}" dropzone="copy" 
+    (dragstart)="dragStart($event)" (drop)="mouseUp($event)" (dragenter)="dragCancel($event)" 
+    (dragleave)="dragCancel($event)" (dragover)="dragCancel($event)"
+    >
+
+</div>
