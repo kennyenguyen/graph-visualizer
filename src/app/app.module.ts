@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faCode } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
@@ -28,7 +29,7 @@ import { NodeComponent } from './components/node/node.component';
     bootstrap: [AppComponent]
 })
 export class AppModule {
-    constructor(library: FaIconLibrary) {
-        library.addIcons(faGithub, faLinkedin, faCode, faHeart);
+    constructor() {
+        library.add(faGithub, faLinkedin, faCode, faHeart);
     }
 }
