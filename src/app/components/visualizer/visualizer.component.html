@@ -1,0 +1,53 @@
+<div class="grid-container">
+    <nav>
+        <div class="heading">
+            Pathfinding Visualizer
+        </div>
+        <app-actions [actions]="actions" (taken)="actionTakenHandler($event)"></app-actions>
+    </nav>
+    <div class="info">
+        <div class="detail">
+            <div class="node isStartNode"></div>
+            <div class="text">Start Point (Drag to move)</div>
+        </div>
+        <div class="detail">
+            <div class="node isEndNode"></div>
+            <div class="text">End Point (Drag to move)</div>
+        </div>
+        <div class="detail">
+            <div class="node isWall"></div>
+            <div class="text">Wall (Click and drag)</div>
+        </div>
+        <div class="detail">
+            <div class="node isVisited"></div>
+            <div class="text">Visited Nodes</div>
+        </div>
+        <div class="detail">
+            <div class="node inPath"></div>
+            <div class="text">Shortest Path</div>
+        </div>
+    </div>
+    <div class="wrapper" (mousedown)="mouseDown($event)" (mouseup)="mouseUp($event)">
+        <div *ngFor="let r of [].constructor(rows); let rn = index;" class="row">
+            <div *ngFor="let c of [].constructor(cols); let cn = index;" class="col">
+                <app-node #node [node]="nodes[rn][cn]" (dropped)="drop($event)"></app-node>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div>
+            Made with <fa-icon icon="heart"></fa-icon> by KN.
+        </div>
+        <div class="social">
+            <a href="https://github.com/kennyenguyen/pathfinding-visualizer" class="social-button">
+                <fa-icon icon="github"></fa-icon>
+            </a>
+            <a href="https://www.linkedin.com/in/kennyenguyen" class="social-button">
+                <fa-icon icon="linkedin"></fa-icon>
+            </a>
+            <a href="https://leetcode.com/BeefCode" class="social-button">
+                <fa-icon icon="code"></fa-icon>
+            </a>
+        </div>
+    </div>
+</div>
