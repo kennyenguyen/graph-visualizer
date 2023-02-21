@@ -1,3 +1,5 @@
 <div class="container" (drop)="drop($event)">
-    <div *ngFor="let action of actions" (click)="actionClick(action)" class="action">{{ action.name }}</div>
+    <div *ngFor="let action of actions" (click)="actionClick(action)" class="action">
+        {{ action.name }}
+    </div>
 </div>

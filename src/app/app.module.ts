@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,17 +9,18 @@ import { VisualizerComponent } from './components/visualizer/visualizer.componen
 import { NodeComponent } from './components/node/node.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ActionsComponent,
-    VisualizerComponent,
-    NodeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ActionsComponent,
+        VisualizerComponent,
+        NodeComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        DragDropModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
